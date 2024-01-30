@@ -78,15 +78,15 @@ header form{
     cursor: pointer;
 }
 
-.header__icons__cart{
+.header__icons-cart{
     border: none;
     background: none;
     cursor: pointer;
 }
-.button__search path, .header__icons__cart path{
+.button__search path, .header__icons-cart path{
     transition: 0.3s ease-in;
 }
-.button__search:hover path, .header__icons__cart:hover path{
+.button__search:hover path, .header__icons-cart:hover path{
     fill: rgba(238, 6, 130, 0.994);
 }
 
@@ -166,35 +166,35 @@ header form{
     color: #FFF;
     font-size: 22px;
 }
-.nav__link__women::before{
+.nav__link-women::before{
     content: url('../img/icons/women.png');
     margin-right: 10px;
 }
-.nav__link__men::before{
+.nav__link-men::before{
     content: url('../img/icons/men.png');
     margin-right: 10px;
 }
-.nav__link__kids::before{
+.nav__link-kids::before{
     content: url('../img/icons/kids.png');
     margin-right: 10px;
 }
-.nav__link__shoes::before{
+.nav__link-shoes::before{
     content: url('../img/icons/shoes.png');
     margin-right: 10px;
 }
-.nav__link__home::before{
+.nav__link-home::before{
     content: url('../img/icons/home.png');
     margin-right: 10px;
 }
-.nav__link__beauty::before{
+.nav__link-beauty::before{
     content: url('../img/icons/beauty.png');
     margin-right: 10px;
 }
-.nav__link__electronics::before{
+.nav__link-electronics::before{
     content: url('../img/icons/electronics.png');
     margin-right: 10px;
 }
-.nav__link__pets::before{
+.nav__link-pets::before{
     content: url('../img/icons/pets.png');
     margin-right: 10px;
 }
@@ -208,9 +208,9 @@ header form{
     color: rgb(94, 1, 128);
 
 }
-.nav__link span, .nav__link__women::before, .nav__link__men::before, .nav__link__kids::before, .nav__link__shoes::before, .nav__link__home::before, .nav__link__beauty::before, .nav__link__electronics::before, .nav__link__pets::before{
+.nav__link span, .nav__link-women::before, .nav__link-men::before, .nav__link-kids::before, .nav__link-shoes::before, .nav__link-home::before, .nav__link-beauty::before, .nav__link-electronics::before, .nav__link-pets::before{
     transition: 0.4s;
 }
-.nav__link:hover span, .nav__link__women:hover::before, .nav__link__men:hover::before, .nav__link__kids:hover::before, .nav__link__shoes:hover::before, .nav__link__home:hover::before, .nav__link__beauty:hover::before, .nav__link__electronics:hover::before, .nav__link__pets:hover::before{
+.nav__link:hover span, .nav__link-women:hover::before, .nav__link-men:hover::before, .nav__link-kids:hover::before, .nav__link-shoes:hover::before, .nav__link-home:hover::before, .nav__link-beauty:hover::before, .nav__link-electronics:hover::before, .nav__link-pets:hover::before{
     transform: scale(1.1)
 }
