@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
 </head>
 
 <body>
-
     <header class="header">
         <div class="wrapper">
             <div class="header__logo">
@@ -92,7 +92,66 @@
                         fill="#FFF" />
                     </svg>
                 </button>
+        </div>
     </header>
+    <div class="slider">
+        <div class="wrapper">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <a href="#topsales">
+                        <img src="img/slider/1.webp" class="slider__img">
+                    </a>
+                </div>
+
+                <div class="mySlides fade">
+                    <a href="#clothes">
+                        <img src="img/slider/2.webp" class="slider__img">
+                    </a>
+                </div>
+                <div class="mySlides fade">
+                    <a href="#barmariska">
+                        <img src="img/slider/3.webp" class="slider__img">
+                    </a>
+                </div>
+                <div class="mySlides fade">
+                    <a href="#garnier">
+                        <img src="img/slider/4.webp" class="slider__img">
+                    </a>
+                </div>
+                <div class="mySlides fade">
+                    <a href="#magnie">
+                        <img src="img/slider/5.webp" class="slider__img">
+                    </a>
+                </div>
+                <div class="mySlides fade">
+                    <a href="#dove">
+                        <img src="img/slider/6.webp" class="slider__img">
+                    </a>
+                </div>
+                <div class="mySlides fade">
+                    <a href="#shirt">
+                        <img src="img/slider/7.webp" class="slider__img">
+                    </a>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                <a class="next" onclick="plusSlides(1)">&#10095</a>
+                
+            </div>
+
+                <div class="slider-dots">
+                    <span class="dot " onclick="currentSlide(1)"></span>
+                    <span class="dot " onclick="currentSlide(2)"></span>
+                    <span class="dot " onclick="currentSlide(3)"></span>
+                    <span class="dot " onclick="currentSlide(4)"></span>
+                    <span class="dot " onclick="currentSlide(5)"></span>
+                    <span class="dot " onclick="currentSlide(6)"></span>
+                    <span class="dot " onclick="currentSlide(7)"></span>
+                </div>
+                
+        </div>    
+    </div>
+    <script src="js/slider.js"></script>
 </body>
 
 </html>
