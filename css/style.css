@@ -48,8 +48,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .wrapper {
-    padding: 0 15px;
-    max-width: 1200px;
+  padding: 0 32px;
+    max-width: 1500px;
     margin: 0 auto;
   }
 
@@ -62,6 +62,11 @@ header{
   background-size: cover;
 }
 
+
+.header__logo img{
+  width: 100%;
+  height: auto;
+}
 
 .header .wrapper{
   display: flex;
@@ -254,6 +259,7 @@ header form{
 .slider__img{
     width: 100%;
     height: 170px;
+    border-radius: 15px;
 }
 
 
@@ -330,4 +336,148 @@ header form{
 @keyframes fade {
     from{opacity: .4}
     to{opacity: 1}
+}
+
+
+
+
+/* 
+==================== footer ==================== */
+
+.footer {
+  background: #6311b5;
+  padding: 40px 0 80px;
+}
+
+.footer__columns {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 2*8px);
+  margin-bottom: 42px;
+}
+
+
+.footer__column-1{
+  width: calc(29% - 2*8px);
+}
+
+.footer__column-2{
+  width: calc(29% - 2*8px);
+}
+
+.footer__column-3{
+  width: calc(21% - 2*8px);
+}
+
+.footer__column-4{
+  width: calc(21% - 2*8px);
+}
+
+
+
+.footer__columns h2{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-family: Segoe UI;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.footer__columns p {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Segoe UI;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+.footer__columns span,
+.footer__columns p {
+  margin-bottom: 12px;
+}
+
+.wildberries__box{
+  border: 2px solid rgba(255,255,255,.1);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 232px;
+}
+
+.qr{
+  max-width: 136px;
+  width: 100%;
+  height: 136px;
+  background: url('../img/icons/qr.png');
+}
+
+.wildberries__box .footer-apps__text {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(255,255,255,.6);
+  margin: 8px 0 16px;
+  text-align: center;
+}
+
+
+.apps{
+  display: flex;
+  justify-content: space-between;
+  max-width: 200px;
+  gap: 5px;
+}
+
+.apple{
+  width: 44px;
+  height: 44px;
+  background-image: url('../img/icons/apple.svg');
+}
+
+.gplay{
+  width: 44px;
+  height: 44px;
+  background-image: url('../img/icons/gplay.svg');
+}
+
+.huawei{
+  width: 44px;
+  height: 44px;
+  background-image: url('../img/icons/huawei.svg');
+}
+
+.rustore{
+  width: 44px;
+  height: 44px;
+  background-image: url('../img/icons/rustore.svg');
+}
+
+
+.footer__copyright {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__copyright p {
+  color: rgba(255,255,255,.6);
+  font-size: 14px;
+}
+
+.footer__link{
+  border-bottom: 1px solid;
+    font-size: 16px;
+    line-height: 22px;
+    color: #242424;
+    background-color: transparent;
+    cursor: pointer;
+    color: rgba(255,255,255,.6);
+    border-color: rgba(255,255,255,.6);
+    font-size: inherit;
+    line-height: inherit;
+    white-space: nowrap;
 }
