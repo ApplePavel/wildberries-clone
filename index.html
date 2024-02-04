@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Wildberries</title>
+    <link rel="icon" href="img/icons/favicon.png" sizes="16x16" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&family=Oxygen:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="fonts/fonts.css">
     <script src="js/main.js"></script>
 </head>
@@ -16,51 +21,97 @@
             <div class="header__logo">
                 <a href="#"><img src="img/icons/wbLogo.svg" alt="Wildberries"></a>
             </div>
-
-
             <div class="burger-menu">
-
                 <input type="checkbox" id="check" class="checkbox">
                 <label for="check">
-                    <div class="lines">
-                        <span class="line line1"></span>
-                        <span class="line line2"></span>
-                        <span class="line line3"></span>
+                    <div class="lines__container">
+                        <div class="lines">
+                            <span class="line line1"></span>
+                            <span class="line line2"></span>
+                            <span class="line line3"></span>
+                        </div>
                     </div>
-
                 </label>
                 <div class="header__toggle-menu">
                     <nav class="nav-toggle">
                         <ul>
                             <li class="nav__item">
                                 <a class="nav__link nav__link-women" href="#women"><span>Женщинам</span></a>
-
+                                <div class="hidden__menu">
+                                    <a href="#women">
+                                        <img src="img/menu/women.webp" alt=""> 
+                                        <h3>Одежда для дома</h3>
+                                    </a>
+                                </div>
                             </li>
                             <li class="nav__item">
                                 <a class="nav__link nav__link-men" href="#men"><span>Мужчинам</span></a>
+                                <div class="hidden__menu">
+                                    <a href="#men">
+                                        <img src="img/menu/men.webp" alt=""> 
+                                        <h3>Брюки</h3>
+                                    </a>
+                                </div>
                             </li>
                             <li class="nav__item">
                                 <a class="nav__link nav__link-kids" href="#kids"><span>Детям</span></a>
+                                <div class="hidden__menu">
+                                    <a href="#kids">
+                                        <img src="img/menu/kids.webp" alt=""> 
+                                        <h3>Одежда для малышей</h3>
+                                    </a>
+                                </div>
                             </li>
                             <li class="nav__item">
                                 <a class="nav__link nav__link-shoes" href="#shoes"><span>Обувь</span></a>
+                                <div class="hidden__menu">
+                                    <a href="#shoes">
+                                        <img src="img/menu/shoes.webp" alt=""> 
+                                        <h3>Ботинки</h3>
+                                    </a>
+                                </div>
                             </li>
                             <li class="nav__item">
                                 <a class="nav__link nav__link-home" href="#home"><span>Дом</span></a>
+                                <div class="hidden__menu">
+                                    <a href="#home">
+                                        <img src="img/menu/home.webp" alt=""> 
+                                        <h3>Товары для спальни</h3>
+                                    </a>
+                                </div>
                             </li>
                             <li class="nav__item">
                                 <a class="nav__link nav__link-beauty" href="#beauty"><span>Красота</span></a>
+                                <div class="hidden__menu">
+                                    <a href="#beauty">
+                                        <img src="img/menu/beauty.webp" alt=""> 
+                                        <h3>Косметика для макияжа</h3>
+                                    </a>
+                                </div>
                             </li>
                             <li class="nav__item">
                                 <a class="nav__link nav__link-electronics" href="#electronics"><span>Электроника</span></a>
+                                <div class="hidden__menu">
+                                    <a href="#electronics">
+                                        <img src="img/menu/electronics.webp" alt=""> 
+                                        <h3>Смартфоны</h3>
+                                    </a>
+                                </div>
                             </li>
                             <li class="nav__item">
                                 <a class="nav__link nav__link-pets" href="#pets"><span>Зоотовары</span></a>
+                                <div class="hidden__menu">
+                                    <a href="#pets">
+                                        <img src="img/menu/pets.webp" alt=""> 
+                                        <h3>Кошачий корм</h3>
+                                    </a>
+                                </div>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
+
 
 
 
