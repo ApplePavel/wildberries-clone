@@ -114,28 +114,16 @@ header form {
   transition: 0.5s ease;
 }
 
-.button__search {
-  position: absolute;
-  right: 17%;
-  width: 45px;
-  background: none;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-}
-
 .header__icons-cart {
   border: none;
   background: none;
   cursor: pointer;
 }
 
-.button__search path,
 .header__icons-cart path {
   transition: 0.3s ease-in;
 }
 
-.button__search:hover path,
 .header__icons-cart:hover path {
   fill: rgba(238, 6, 130, 0.994);
 }
@@ -246,7 +234,6 @@ header form {
 }
 
 .checkbox:checked~.header__toggle-menu {
-  opacity: 1;
   transform: translateX(0);
 }
 
@@ -348,7 +335,7 @@ header form {
 
 /* !________________________________________________________________SUBMENU______________________________________________________________ */
 
-.hidden__menu {
+.hidden__menu{
   background-color: #FFF;
   height: 100vh;
   width: 20vw;
@@ -358,32 +345,43 @@ header form {
   padding: 15px;
   top: 0;
   left: 40vw;
-  z-index: 1;
   transform: translateX(-100%);
-  display: none;
+  z-index: 1;
+  visibility: hidden;
+  transition: 0.2s;
 }
-
+.hidden__menu *{
+  visibility: hidden;
+}
 .hidden__menu h3 {
   text-align: center;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
+  transition: 0.15s;
 }
 
 .hidden__menu img {
   border-radius: 15px;
+  transition: 0.15s;
 }
 
-.nav__item:hover .hidden__menu {
-  display: block;
+.img__container::after{
+  content: "";
+  position: absolute;
+  border-radius: 15px;
+  top: 15px;
+  left: 15px;
+  width: 352px;
+  height: 428px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.25s;
 }
-
-.hidden__menu img,
-.hidden__menu h3 {
-  transition: 1s;
+.nav__item:hover .hidden__menu, .nav__item:hover .hidden__menu *{
+visibility: visible;
 }
-
-.hidden__menu img:hover {
-  scale: 1.02;
+.img__container:hover::after {
+opacity: 0.5;
 }
 
 .hidden__menu h3:hover {
@@ -546,11 +544,17 @@ header form {
   font-weight: 400;
   line-height: 24px;
   text-align: left;
+  transition: 0.5s;
 }
 
 .footer__columns span,
 .footer__columns p {
   margin-bottom: 12px;
+}
+
+.footer__columns a p:hover{
+  color:rgba(238, 6, 130, 0.994);
+  text-decoration: underline;
 }
 
 .wildberries__box {
@@ -561,6 +565,23 @@ header form {
   flex-direction: column;
   align-items: center;
   max-width: 232px;
+  transition: 0.5s;
+  animation-name: wildberries__box-color;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes wildberries__box-color{
+  0%{    
+      border-color: #ffffff;
+      }
+  50%{
+    border-color: #8352f6;
+  }
+  100%{
+    border-color: #f87af3;
+  }
 }
 
 .qr {
