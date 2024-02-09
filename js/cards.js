@@ -49,6 +49,12 @@ WILDBERRIES_URL
             addToCartButton.textContent = 'В корзину';
             addToCartButton.addEventListener('click', () => addToCart(item.id));
 
+            card.id = item.id;
+            card.name = item.name;
+            card.oldPrice = oldPrice.toFixed(2);
+            card.salePrice = item.price;
+            card.rating = dynamicRating.toFixed(2);
+
             card.appendChild(imageElement);
             priceElement.appendChild(priceElementSale);
             priceElement.appendChild(priceElementOld);
@@ -57,6 +63,7 @@ WILDBERRIES_URL
             nameElement.appendChild(brendElement);
             card.appendChild(ratinginfoElement);
             card.appendChild(addToCartButton);
+            
 
             cardsContainer.appendChild(card);
         });
