@@ -47,7 +47,7 @@
         const productRatingContainer = document.createElement('div');
         productRatingContainer.className = 'rating';
         const modalProductRating = document.createElement('span');
-        modalProductRating.innerHTML = `<span class="star">&#9733;</span> ${cardRating}`
+        modalProductRating.innerHTML = `${cardRating}`
         modalProductRating.className = ('rewiew')
 
         const cartButton = document.querySelector('.add-to-cart-button');
@@ -55,7 +55,7 @@
 
         const closeModalButton = document.createElement('button');
         closeModalButton.className = 'close-modal-button';
-        closeModalButton.textContent = 'Закрыть';
+        // closeModalButton.textContent = 'Закрыть';
         closeModalButton.addEventListener('click', closeModal);
 
         modalContent.append(modalImage, modalInfoContaier);
