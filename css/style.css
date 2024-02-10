@@ -772,7 +772,9 @@ opacity: 0.5;
   text-align: left;
   position: relative;
   margin-bottom: 5px;
-  overflow: hidden
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 
@@ -858,7 +860,7 @@ opacity: 0.5;
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.33);
-  transform: translateY(-5px)
+  transform: translateY(-5px);
 }
 
 .card:hover::before{
@@ -894,19 +896,27 @@ opacity: 0.5;
   transition: 0.3s ease-in-out; 
 }
 .modal-card__info{
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  padding-block: 35px;
 }
 .modal-content .name {
-  font-size: 22px;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
+.modal-content .name__brend{
+  white-space: wrap;
+}
+
 .modal-content .name__brend{
 margin: 0px auto;
 white-space: wrap;
 }
+
 .modal-content .price{
 display: flex;
 gap: 10px;
@@ -926,13 +936,23 @@ gap: 10px;
   grid-column: 2/2;
   grid-row: 1/1;
   position: absolute;
-  font-size: 20px;
+  font-size: 30px;
   top: 10px;
   right: 10px;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #6311b5;
-  border-radius: 10px;
+  background-color: transparent;
+  color: #6311b5;
+  border: transparent;
   padding: 5px 10px;
   cursor: pointer;
+}
+.close-modal-button:before{
+  content: '✖';
+}
+.modal-content .rating {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 95px;
 }

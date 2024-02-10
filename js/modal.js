@@ -47,15 +47,16 @@
         const productRatingContainer = document.createElement('div');
         productRatingContainer.className = 'rating';
         const modalProductRating = document.createElement('span');
-        modalProductRating.innerHTML = cardRating;
-        modalProductRating.className = ('rewiew');
+        modalProductRating.innerHTML = `${cardRating}`
+        modalProductRating.className = ('rewiew')
+
 
         const cartButton = document.querySelector('.add-to-cart-button');
         const modalCartButton = cartButton.cloneNode(true);
 
         const closeModalButton = document.createElement('button');
         closeModalButton.className = 'close-modal-button';
-        closeModalButton.textContent = 'Закрыть';
+        // closeModalButton.textContent = 'Закрыть';
         closeModalButton.addEventListener('click', closeModal);
 
         modalContent.append(modalImage, modalInfoContaier);
