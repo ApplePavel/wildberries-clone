@@ -700,11 +700,27 @@ opacity: 0.5;
 }
 
 .card {
+  position: relative;
+  cursor: pointer;
   border-radius: 8px;
   padding: 10px;
   width: 250px;
   height: fit-content;
   transition: 0.3s ease-in-out;
+}
+.card::before {
+  position: absolute;
+  text-align: center;
+  content: 'Быстрый просмотр';
+  color: #FFF;
+  width: 88%;
+  top: 2%;
+  right: 6%;
+  background-color: #b75afff0;
+  z-index: 1;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.5s;
 }
 
 .card img {
@@ -715,8 +731,13 @@ opacity: 0.5;
   max-width: 100%;
   margin-bottom: 8px;
 }
-
-
+.name__brend{
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .price{
   margin-bottom: 5px;
 }
@@ -842,9 +863,9 @@ opacity: 0.5;
   transform: translateY(-5px);
 }
 
-
-
-
+.card:hover::before{
+  opacity: 1;
+}
 
 
 /* ========== modal card ==================== */
@@ -870,8 +891,6 @@ opacity: 0.5;
   background-color: #FFF;
   display: flex;
   gap: 10px;
-  /* display: grid;
-  grid-template: repeat(4, 1fr) / repeat(2, 1fr); */
   overflow: hidden;
   position: relative;
   transition: 0.3s ease-in-out; 
@@ -892,6 +911,12 @@ opacity: 0.5;
 .modal-content .name__brend{
   white-space: wrap;
 }
+
+.modal-content .name__brend{
+margin: 0px auto;
+white-space: wrap;
+}
+
 .modal-content .price{
 display: flex;
 gap: 10px;
@@ -906,10 +931,6 @@ gap: 10px;
   height: auto;
   transition: 0.3s ease-in-out; /* Добавьте анимацию для свойства transform */
 }
-
-/* .modal-content img:hover {
-  transform: scale(1.05); 
-} */
 
 .close-modal-button {
   grid-column: 2/2;

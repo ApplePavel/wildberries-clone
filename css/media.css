@@ -218,9 +218,6 @@ header form {
     text-align: center;
     margin-bottom: 0px;
 }
-.footer__columns a p{
-    pointer-events: none;
-}
 .footer__column-5 {
     display: none;
 }
@@ -238,7 +235,7 @@ header form {
     header form {
         width: 75%;
     }
-    .header__icons-cart, .nav__link{
+    .header__icons-cart{
         pointer-events: none;
     }
     .footer {
@@ -289,7 +286,7 @@ header form {
 }
 @media (max-width: 685px){
     .card {
-        max-width: 186px;
+        max-width: 210px;
     }
     .card img {
         height: 160px;
@@ -325,9 +322,6 @@ header form {
     }
 }
 @media (max-width: 621px){
-    .card {
-        max-width: 170px;
-    }
     .card img {
         height: 148px;
     }
@@ -353,9 +347,6 @@ header form {
     }
     .slideshow-container {
         height: 97px;
-    }
-    .card {
-        max-width: 159px;
     }
     }
     @media (max-width: 540px){
