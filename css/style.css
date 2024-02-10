@@ -696,18 +696,20 @@ opacity: 0.5;
   flex-wrap: wrap;
   gap: 25px;
   margin-bottom: 40px;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card {
   border-radius: 8px;
   padding: 10px;
-  max-width: 250px;
+  width: 250px;
   height: fit-content;
   transition: 0.3s ease-in-out;
 }
 
 .card img {
+  margin: 0 auto;
+  display: block;
   border-radius: 8px;
   height: 220px;
   max-width: 100%;
@@ -749,16 +751,9 @@ opacity: 0.5;
   text-align: left;
   position: relative;
   margin-bottom: 5px;
-  white-space: nowrap;
   overflow: hidden
 }
 
-.ratinginfo {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
 
 
 .price__sale {
@@ -797,9 +792,6 @@ opacity: 0.5;
 }
 
 
-.ratinginfo {
-  margin-top: 10px;
-}
 
 .rewiew {
   font-size: 14px;
@@ -812,10 +804,28 @@ opacity: 0.5;
 }
 
 .rating {
+  display: inline-flex;
+  align-items: center;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 5px;
+}
+
+.rating::before {
+  content: ""; 
+  width: 12px;
+  height: 12px;
+  background-image: url('../img/icons/star.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5px;
+}
+
+
+.no-results-message{
+  font-size: 36px;
 }
 
 

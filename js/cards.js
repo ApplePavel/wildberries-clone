@@ -19,11 +19,11 @@ WILDBERRIES_URL
             const priceElementOld = document.createElement('span');
             priceElementOld.className = 'price__old';
             const oldPrice = parseFloat(item.price) + (parseFloat(item.price) * 0.15);
-            priceElementOld.textContent = `$${oldPrice.toFixed(2)}`;
+            priceElementOld.textContent = formatPrice(oldPrice);
 
             const priceElementSale = document.createElement('span');
             priceElementSale.className = 'price__sale';
-            priceElementSale.textContent = `$${item.price}`;
+            priceElementSale.textContent = formatPrice(item.price);
 
             const deliveryElement = document.createElement('h2');
             deliveryElement.className = 'delivery';
@@ -41,8 +41,7 @@ WILDBERRIES_URL
 
             const rewiew = document.createElement('span');
             rewiew.className = 'rewiew';
-            const dynamicRating = 4.65 + Math.random() * 0.35;
-            ratinginfoElement.innerHTML = `<span class="star">&#9733;</span> ${dynamicRating.toFixed(2)}`;
+            ratinginfoElement.textContent = item.rating;
 
             const addToCartButton = document.createElement('button');
             addToCartButton.className = 'add-to-cart-button';
@@ -53,7 +52,7 @@ WILDBERRIES_URL
             card.name = item.name;
             card.oldPrice = oldPrice.toFixed(2);
             card.salePrice = item.price;
-            card.rating = dynamicRating.toFixed(2);
+            card.rating = item.rating;
 
             card.appendChild(imageElement);
             priceElement.appendChild(priceElementSale);
@@ -63,7 +62,6 @@ WILDBERRIES_URL
             nameElement.appendChild(brendElement);
             card.appendChild(ratinginfoElement);
             card.appendChild(addToCartButton);
-            
 
             cardsContainer.appendChild(card);
         });
@@ -74,4 +72,14 @@ WILDBERRIES_URL
 
 function addToCart(productId) {
     console.log(`Товар с ID ${productId} добавлен в корзину!`);
+}
+
+function formatPrice(price) {
+    const rubles = Math.floor(price);
+    const kop = Math.round((price - rubles) * 100);
+    if (kop === 0) {
+        return `${rubles} р.`;
+    } else {
+        return `${rubles},${kop}р.`;
+    }
 }
