@@ -47,11 +47,11 @@
         const productRatingContainer = document.createElement('div');
         productRatingContainer.className = 'rating';
         const modalProductRating = document.createElement('span');
-        modalProductRating.innerHTML = `<span class="star">&#9733;</span> ${cardRating}`
-        modalProductRating.className = ('rewiew')
+        modalProductRating.innerHTML = cardRating;
+        modalProductRating.className = ('rewiew');
 
         const cartButton = document.querySelector('.add-to-cart-button');
-        const modalCartButton = cartButton.cloneNode(true)
+        const modalCartButton = cartButton.cloneNode(true);
 
         const closeModalButton = document.createElement('button');
         closeModalButton.className = 'close-modal-button';
@@ -60,9 +60,9 @@
 
         modalContent.append(modalImage, modalInfoContaier);
         modalInfoContaier.append(modalNameContainer, modalPriceContainer, productRatingContainer, modalCartButton)
-        modalNameContainer.append(modalName)
-        productRatingContainer.append(modalProductRating)
-        modalPriceContainer.append(modalPriceSale, modalPriceOld)
+        modalNameContainer.append(modalName);
+        productRatingContainer.append(modalProductRating);
+        modalPriceContainer.append(modalPriceSale, modalPriceOld);
         modalContent.appendChild(closeModalButton);
         modalContainer.appendChild(modalContent);
         document.body.appendChild(modalContainer);
