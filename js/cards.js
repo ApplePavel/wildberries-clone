@@ -18,8 +18,23 @@ WILDBERRIES_URL
         console.error('Error fetching data:', error);
     });
 
-function addToCart(productId) {
-    console.log(`Товар с ID ${productId} добавлен в корзину!`);
+
+function addToCart(product) {
+    const cart = {
+        id : product.id,
+        price: normalPrice(product.price),
+        img : product.img,
+        rating : product.rating,
+        name : product.name
+    }
+    if(productsInCart.some(e=>e.id === cart.id)){
+        console.log('Уже в корзине')
+    }else{
+        productsInCart.push(cart)
+    }
+  console.log(product.price)
+   displayCart()
+
 }
 
 function formatPrice(price) {
@@ -84,7 +99,7 @@ function createCardElement(item) {
     const addToCartButton = document.createElement('button');
     addToCartButton.className = 'add-to-cart-button';
     addToCartButton.textContent = 'В корзину';
-    addToCartButton.addEventListener('click', () => addToCart(item.id));
+    addToCartButton.addEventListener('click', () => addToCart(item));
 
     card.id = item.id;
     card.name = item.name;
