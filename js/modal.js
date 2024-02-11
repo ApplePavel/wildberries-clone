@@ -39,7 +39,7 @@
 
         const modalNameContainer = document.createElement('div');
         modalNameContainer.className = 'name';
-        const modalName = document.createElement('span');
+        const modalName = document.createElement('p');
         modalName.textContent = cardName;
         modalName.className = 'name__brend';
 
@@ -52,17 +52,25 @@
 
 
         const cartButton = document.querySelector('.add-to-cart-button');
-        const modalCartButton = cartButton.cloneNode(true);
+
+        const modalCartButton = cartButton.cloneNode(true)
+         
+        const cartButtonContainer = document.createElement('div');
+        cartButtonContainer.className = 'cartButtonContainer';
+
 
         const closeModalButton = document.createElement('button');
         closeModalButton.className = 'close-modal-button';
         closeModalButton.addEventListener('click', closeModal);
 
         modalContent.append(modalImage, modalInfoContaier);
-        modalInfoContaier.append(modalNameContainer, modalPriceContainer, productRatingContainer, modalCartButton)
-        modalNameContainer.append(modalName);
-        productRatingContainer.append(modalProductRating);
-        modalPriceContainer.append(modalPriceSale, modalPriceOld);
+
+        modalInfoContaier.append(modalNameContainer, modalPriceContainer, productRatingContainer, cartButtonContainer)
+        cartButtonContainer.append(modalCartButton)
+        modalNameContainer.append(modalName)
+        productRatingContainer.append(modalProductRating)
+        modalPriceContainer.append(modalPriceSale, modalPriceOld)
+
         modalContent.appendChild(closeModalButton);
         modalContainer.appendChild(modalContent);
         document.body.appendChild(modalContainer);
