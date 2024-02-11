@@ -714,13 +714,18 @@ opacity: 0.5;
   content: 'Быстрый просмотр';
   color: #FFF;
   width: 88%;
-  top: 2%;
+  bottom: 37.5%;
   right: 6%;
+  height: 25px;
   background-color: #b75afff0;
   z-index: 1;
   border-radius: 5px;
   opacity: 0;
   transition: 0.5s;
+  font-family: Segoe UI;
+  font-size: 18px;
+  font-weight: 400;
+  pointer-events: none;
 }
 
 .card img {
@@ -886,7 +891,6 @@ opacity: 0.5;
 .modal-content {
   padding: 10px;
   width: 40%;
-  height: 50%;
   border-radius: 15px;
   background-color: #FFF;
   display: flex;
@@ -899,7 +903,6 @@ opacity: 0.5;
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding-block: 35px;
 }
 .modal-content .name {
@@ -929,7 +932,7 @@ gap: 10px;
   border-radius: 10px;
   width: 60%;
   height: auto;
-  transition: 0.3s ease-in-out; /* Добавьте анимацию для свойства transform */
+  transition: 0.3s ease-in-out;
 }
 
 .close-modal-button {
@@ -954,5 +957,4 @@ gap: 10px;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
-  margin-bottom: 95px;
 }

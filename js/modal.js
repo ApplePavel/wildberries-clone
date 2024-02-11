@@ -56,7 +56,6 @@
 
         const closeModalButton = document.createElement('button');
         closeModalButton.className = 'close-modal-button';
-        // closeModalButton.textContent = 'Закрыть';
         closeModalButton.addEventListener('click', closeModal);
 
         modalContent.append(modalImage, modalInfoContaier);
@@ -70,9 +69,23 @@
 
         document.body.style.overflow = 'hidden';
 
-    function closeModal() {
-        const modalContainer = document.querySelector('.modal-container');
-        modalContainer.remove();
-        document.body.style.overflow = '';
-    }
+        function closeModal() {
+            const modalContainer = document.querySelector('.modal-container');
+            modalContainer.remove();
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('click', (event) => {
+            const modalContainer = document.querySelector('.modal-container');
+            if (event.target === modalContainer) {
+                closeModal();
+            }
+        });
+        
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    
     }
