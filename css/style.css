@@ -700,11 +700,32 @@ opacity: 0.5;
 }
 
 .card {
+  position: relative;
+  cursor: pointer;
   border-radius: 8px;
   padding: 10px;
   width: 250px;
   height: fit-content;
   transition: 0.3s ease-in-out;
+}
+.card::before {
+  position: absolute;
+  text-align: center;
+  content: 'Быстрый просмотр';
+  color: #FFF;
+  width: 88%;
+  bottom: 37.5%;
+  right: 6%;
+  height: 25px;
+  background-color: #b75afff0;
+  z-index: 1;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.5s;
+  font-family: Segoe UI;
+  font-size: 18px;
+  font-weight: 400;
+  pointer-events: none;
 }
 
 .card img {
@@ -715,8 +736,13 @@ opacity: 0.5;
   max-width: 100%;
   margin-bottom: 8px;
 }
-
-
+.name__brend{
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .price{
   margin-bottom: 5px;
 }
@@ -751,7 +777,9 @@ opacity: 0.5;
   text-align: left;
   position: relative;
   margin-bottom: 5px;
-  overflow: hidden
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 
@@ -776,7 +804,7 @@ opacity: 0.5;
 }
 
 .add-to-cart-button {
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 5px 11px 6px;
   font-weight: 400;
   line-height: 17px;
@@ -837,12 +865,12 @@ opacity: 0.5;
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.33);
-  transform: translateY(-5px)
+  transform: translateY(-5px);
 }
 
-
-
-
+.card:hover::before{
+  opacity: 1;
+}
 
 
 /* ========== modal card ==================== */
@@ -863,60 +891,101 @@ opacity: 0.5;
 .modal-content {
   padding: 10px;
   width: 40%;
-  height: 50%;
   border-radius: 15px;
   background-color: #FFF;
   display: flex;
-  gap: 10px;
+
+  gap: 20px;
   /* display: grid;
   grid-template: repeat(4, 1fr) / repeat(2, 1fr); */
+
   overflow: hidden;
   position: relative;
   transition: 0.3s ease-in-out; 
 }
 .modal-card__info{
-  width: 40%;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+  padding-top: 35px;
+  padding-bottom: 20px;
 }
+.modal-card__info div:nth-child(4){
+  margin-top: auto;
+
+}
+
+
 .modal-content .name {
-  font-size: 22px;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-height: 50%;
+  padding-right: 20px;
+  margin-bottom: 15px;
+}
+.modal-content .name__brend{
+  white-space: wrap;
+  padding-bottom: 5px;
+}
+
+.modal-content .name__brend{
+margin: 0px auto;
+white-space: wrap;
 }
 
 .modal-content .price{
 display: flex;
 gap: 10px;
+align-items: center;
 }
+
+.cartButtonContainer{
+  display: flex;
+  justify-content: center;
+}
+
 .modal-content .add-to-cart-button{
-  height: 50px;
-  width: 60%;
+  height: 40px;
+  width: 80%;
 }
 .modal-content img {
   border-radius: 10px;
   width: 60%;
   height: auto;
-  transition: 0.3s ease-in-out; /* Добавьте анимацию для свойства transform */
+  transition: 0.3s ease-in-out;
 }
-
-/* .modal-content img:hover {
-  transform: scale(1.05); 
-} */
 
 .close-modal-button {
   grid-column: 2/2;
   grid-row: 1/1;
   position: absolute;
-  font-size: 20px;
+  font-size: 30px;
   top: 10px;
   right: 10px;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #6311b5;
-  border-radius: 10px;
+  background-color: transparent;
+  color: #6311b5;
+  border: transparent;
   padding: 5px 10px;
   cursor: pointer;
+}
+.close-modal-button:before{
+  content: '✖';
+}
+.modal-content .rating {
+  flex: 0 5 0;
+  align-items:self-start;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+
+}
+.modal-content .rating::before {
+  height: 21px;
+
 }
 
 
