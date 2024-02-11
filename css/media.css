@@ -251,8 +251,9 @@
     }
 }
 
+
 @media (max-width: 960px) {
-    .hidden__menu {
+        .hidden__menu {
         display: none;
     }
 
@@ -311,9 +312,9 @@
     }
 
 }
-
-@media (max-width: 943px) {
-    .card img {
+}
+@media (max-width: 943px){
+.card img {
         height: 180px;
     }
 
@@ -337,7 +338,6 @@
     .footer {
         padding-bottom: 40px;
     }
-}
 
 @media (max-width: 903px) {
     .card {
@@ -384,6 +384,7 @@
         width: 50%;
     }
 }
+
 
 @media (max-width: 825px) {
     .card {
@@ -759,3 +760,4 @@
         font-size: 12px;
     }
 }
+
