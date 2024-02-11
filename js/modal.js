@@ -39,7 +39,7 @@
 
         const modalNameContainer = document.createElement('div');
         modalNameContainer.className = 'name';
-        const modalName = document.createElement('span');
+        const modalName = document.createElement('p');
         modalName.textContent = cardName;
         modalName.className = 'name__brend';
 
@@ -47,31 +47,55 @@
         const productRatingContainer = document.createElement('div');
         productRatingContainer.className = 'rating';
         const modalProductRating = document.createElement('span');
-        modalProductRating.innerHTML = `<span class="star">&#9733;</span> ${cardRating}`
+        modalProductRating.innerHTML = `${cardRating}`
         modalProductRating.className = ('rewiew')
 
+
         const cartButton = document.querySelector('.add-to-cart-button');
+
         const modalCartButton = cartButton.cloneNode(true)
+         
+        const cartButtonContainer = document.createElement('div');
+        cartButtonContainer.className = 'cartButtonContainer';
+
 
         const closeModalButton = document.createElement('button');
         closeModalButton.className = 'close-modal-button';
-        closeModalButton.textContent = 'Закрыть';
         closeModalButton.addEventListener('click', closeModal);
 
         modalContent.append(modalImage, modalInfoContaier);
-        modalInfoContaier.append(modalNameContainer, modalPriceContainer, productRatingContainer, modalCartButton)
+
+        modalInfoContaier.append(modalNameContainer, modalPriceContainer, productRatingContainer, cartButtonContainer)
+        cartButtonContainer.append(modalCartButton)
         modalNameContainer.append(modalName)
         productRatingContainer.append(modalProductRating)
         modalPriceContainer.append(modalPriceSale, modalPriceOld)
+
         modalContent.appendChild(closeModalButton);
         modalContainer.appendChild(modalContent);
         document.body.appendChild(modalContainer);
 
         document.body.style.overflow = 'hidden';
 
-    function closeModal() {
-        const modalContainer = document.querySelector('.modal-container');
-        modalContainer.remove();
-        document.body.style.overflow = '';
-    }
+        function closeModal() {
+            const modalContainer = document.querySelector('.modal-container');
+            if (modalContainer !== null) {
+                modalContainer.remove();
+                document.body.style.overflow = '';
+            }
+        }
+         
+        document.addEventListener('click', (event) => {
+            const modalContainer = document.querySelector('.modal-container');
+            if (event.target === modalContainer) {
+                closeModal();
+            }
+        });
+        
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    
     }
