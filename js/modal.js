@@ -71,10 +71,12 @@
 
         function closeModal() {
             const modalContainer = document.querySelector('.modal-container');
-            modalContainer.remove();
-            document.body.style.overflow = '';
+            if (modalContainer !== null) {
+                modalContainer.remove();
+                document.body.style.overflow = '';
+            }
         }
-        
+         
         document.addEventListener('click', (event) => {
             const modalContainer = document.querySelector('.modal-container');
             if (event.target === modalContainer) {
