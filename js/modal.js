@@ -4,18 +4,14 @@
 
     cardsContainer.addEventListener('click', (event) => {
         const clickedElement = event.target;
+
         if (clickedElement.tagName === 'IMG' && clickedElement.parentElement.classList.contains('card')) {
             const imageUrl = clickedElement.src;
-            const cardName = clickedElement.parentElement.name
-            const cardRating = clickedElement.parentElement.rating
-            const cardOldPrice = clickedElement.parentElement.oldPrice
-            const cardSalePrice = clickedElement.parentElement.salePrice
-            openModal(imageUrl, cardName, cardRating, cardOldPrice, cardSalePrice);
-            
+            openModal(imageUrl);
         }
     });
-  
-        function openModal(imageUrl, cardName, cardRating, cardOldPrice, cardSalePrice){
+
+    function openModal(imageUrl) {
         const modalContainer = document.createElement('div');
         modalContainer.className = 'modal-container';
 
@@ -72,6 +68,7 @@
         modalPriceContainer.append(modalPriceSale, modalPriceOld)
 
         modalContent.appendChild(closeModalButton);
+
         modalContainer.appendChild(modalContent);
         document.body.appendChild(modalContainer);
 
