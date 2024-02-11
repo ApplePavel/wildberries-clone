@@ -586,13 +586,23 @@
         }
 
         .card {
-            max-width: 159px;
+            max-width: 163px;
+        }
+        .card {
+            border-radius: 8px;
+            padding: 10px 5px;
+        }
+        .wrapper {
+            padding: 0 18px;
+        }
+        .cards__container {
+            justify-content: space-between;
         }
     }
 
     @media (max-width: 540px) {
         .card {
-            max-width: 206px;
+            max-width: 260px;
         }
 
         .card img {
@@ -614,8 +624,28 @@
         .modal-card__info div:first-child{
             margin-bottom: 20px;
           }
+          .wrapper {
+            padding-inline: 16px;
+        }
+        .cards__container {
+            justify-content: space-evenly;
+        }
     }
-
+    @media (max-width: 532px) {
+        .card {
+            max-width: 240px;
+        }
+    }
+    @media (max-width: 512px) {
+        .card {
+            max-width: 230px;
+        }
+    }
+    @media (max-width: 492px) {
+        .card {
+            max-width: 220px;
+        }
+    }
     @media (max-width: 475px) {
         .slider {
             display: none;
@@ -632,11 +662,31 @@
         .card img {
             height: 164px;
         }
+        .wrapper {
+            padding-inline: 16px;
     }
+    .cards__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .card img{
+        width: 90%;
+    }
+    .add-to-cart-button{
+        margin: 0 auto;
+    }
+    .wrapper {
+        padding: 0 16px
+    }
+    .card {
+        max-width: 218px;
+        max-height: 413px;
+    }
+}
 
     @media (max-width: 443px) {
         .card {
-            max-width: 162px;
+            max-width: 192px;
         }
 
         .card img {
@@ -649,12 +699,14 @@
     }
 
     @media (max-width: 387px) {
+
         .card {
-            max-width: 100%;
+            max-width: 188px;
+            max-height: 390px;
         }
 
         .card img {
-            height: 193px;
+            height: 170px;
         }
 
         .nav__link {
