@@ -20,21 +20,27 @@ WILDBERRIES_URL
 
 
 function addToCart(product) {
+    let i = 1
     const cart = {
         id : product.id,
         price: normalPrice(product.price),
         img : product.img,
         rating : product.rating,
-        name : product.name
+        name : product.name,
+        count : i
     }
     if(productsInCart.some(e=>e.id === cart.id)){
-        console.log('Уже в корзине')
+        const checkIdCart = el => el.id === cart.id
+        const indexToReplace = productsInCart.findIndex(checkIdCart)
+        if(indexToReplace !== -1){
+        cart.count = productsInCart[indexToReplace].count++
+        productsInCart.splice(indexToReplace,1,cart)
+        }
+  
     }else{
         productsInCart.push(cart)
     }
-  console.log(product.price)
    displayCart()
-
 }
 
 function formatPrice(price) {
