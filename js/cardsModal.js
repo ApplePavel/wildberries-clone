@@ -1,12 +1,25 @@
 const modal = document.getElementById("cardsModal")
 const productsInCart = []
+const btnModal = document.querySelector(".header__icons-cart")
+const btnModalMobile = document.getElementById('footerCart')
+
 const normalPrice = (str) => {
 	return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 };
+btnModal.addEventListener('click',() => modal.classList.add('modal--active'))
+btnModalMobile.addEventListener('click',() => modal.classList.add('modal--active'))
+modal.addEventListener('click', function(e){
+    if (e.target === this) modal.classList.remove('modal--active')
+} )
+document.addEventListener('keydown', (e) => {
+    const key = e.key; 
+    if (key === "Escape") {
+        modal.classList.remove('modal--active');
+    }
+});
 
 function displayCart () {
     modal.innerHTML = ''
-    const btnModal = document.querySelector(".header__icons-cart")
     const modalContent = document.createElement('div')
     modalContent.className = 'modal__content'
     modalContent.classList.add('modal__content--l')
@@ -20,7 +33,7 @@ modalTitle.textContent = 'Корзина'
 const btnCloseModal = document.createElement('button')
 btnCloseModal.className = 'modal__close-btn'
 
-btnModal.addEventListener('click',() => modal.classList.add('modal--active'))
+
 btnCloseModal.addEventListener('click', () => modal.classList.remove('modal--active'))
 modalHeader.append(modalTitle,btnCloseModal)
 
@@ -52,16 +65,41 @@ modalList.className = 'modal__list'
 
     const productPrice = document.createElement('span')
     productPrice.className = 'product__price'
-    productPrice.textContent = `${e.price} Руб.`
+    productPrice.textContent = `${(e.price * e.count).toFixed(2)}р.`
+    const productCountContainer = document.createElement('div')
+    productCountContainer.className = 'product__count-container'
+    
+    const productCountDown = document.createElement('button')
+    productCountDown.className = 'product__count-down'
+    const productCountInput = document.createElement('input')
+    productCountInput.className = 'product__input-count'
+    productCountInput.type = 'text'
+    productCountInput.value = e.count
 
+    const productCountUp = document.createElement('button')
+    productCountUp.className = 'product__count-up'
+
+    productCountUp.addEventListener('click', () => {
+        e.count++
+        displayCart()
+    })
+
+    productCountDown.addEventListener('click', () => {
+        e.count--
+        if(e.count === 0){
+            productsInCart.splice(i,1)
+        }
+        displayCart()
+    })
 
     const productDelete= document.createElement('button')
     productDelete.className = 'product__delete'
 
-    modalItem.append(productImg,productInfo,productPrice,productDelete)
+    modalItem.append(productImg,productInfo,productCountContainer,productPrice,productDelete)
     productInfo.append(productName,productRating)
+    productCountContainer.append(productCountDown,productCountInput,productCountUp)
     modalList.append(modalItem)
-
+    
 
     productDelete.addEventListener('click',e => {
         productsInCart.splice(i,1)
@@ -74,10 +112,10 @@ modalList.className = 'modal__list'
     productTotal.className = 'product-total'
     const productVolume = document.createElement('p')
     productVolume.className = 'product__volume'
-    productVolume.textContent = `Товары:${productsInCart.length}шт`
+    productVolume.textContent = `Товары: ${productsInCart.reduce((a,curr)=>a + curr.count,0)} шт.`
     const productCoutn = document.createElement('p')
     productCoutn.className = 'product__count'
-    productCoutn.textContent = `Итого ${productsInCart.reduce((a,curr)=>a + Number(curr.price),0.).toFixed(2)} Руб`
+    productCoutn.textContent = `Итого ${productsInCart.reduce((a,curr)=>a + Number(curr.price * curr.count),0.).toFixed(2)} Руб`
     const productTotalBtn = document.createElement('button')
     productTotalBtn.className = 'total__btn'
     productTotalBtn.textContent = 'Заказать'
@@ -88,5 +126,11 @@ modalList.className = 'modal__list'
     
     productTotal.append(productVolume,productCoutn,productTotalBtn)
     modalMain.append(productTotal)
-
+    localStorage.setItem('Cart', JSON.stringify(productsInCart))
 }
+
+if(localStorage.getItem('Cart').length > 0){
+   productsInCart.push(...JSON.parse(localStorage.getItem('Cart')))
+    displayCart()  
+}
+displayCart()
