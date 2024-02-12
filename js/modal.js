@@ -7,11 +7,15 @@
 
         if (clickedElement.tagName === 'IMG' && clickedElement.parentElement.classList.contains('card')) {
             const imageUrl = clickedElement.src;
-            openModal(imageUrl);
+            const cardName = clickedElement.parentElement.name
+            const cardRating = clickedElement.parentElement.rating
+            const cardOldPrice = clickedElement.parentElement.oldPrice
+            const cardSalePrice = clickedElement.parentElement.salePrice
+            openModal(imageUrl, cardName, cardRating, cardOldPrice, cardSalePrice);
         }
     });
 
-    function openModal(imageUrl) {
+    function openModal(imageUrl, cardName, cardRating, cardOldPrice, cardSalePrice) {
         const modalContainer = document.createElement('div');
         modalContainer.className = 'modal-container';
 
