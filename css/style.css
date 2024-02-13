@@ -1211,3 +1211,18 @@ justify-content: center;
   transition: 0.7s;
   color:#fff
 }
+.footer__seach,
+.footer__home{
+  height: 85%;
+  width: 100%;
+  display: block;
+}
+.footer__seach,
+.seach{ 
+  height: 85%;
+}
+
+
+
+
+
