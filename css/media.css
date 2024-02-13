@@ -202,6 +202,16 @@
         width: 58%;
     }
 }
+@media (max-width: 1024px) {
+.modal-content .name__brend {
+    font-size: 13px;
+    font-weight: bold;
+}
+.card::before {
+    width: 92%;
+    right: 4%;
+}
+}
 
 @media (max-width: 1020px) {
     .footer__columns h2 {
@@ -357,7 +367,6 @@
     header form {
         width: 75%;
     }
-
     
     .nav__link {
         pointer-events: none;
@@ -366,7 +375,13 @@
     .footer {
         padding-bottom: 40px;
     }
-
+    .card::before {
+        bottom: 41.5%;
+    }
+    .modal-content .name__brend {
+        font-size: 21px;
+    }
+}
 @media (max-width: 903px) {
     .card {
         max-width: 190px;
@@ -411,8 +426,13 @@
     .modal-content img {
         width: 50%;
     }
+    .modal-content {
+        height: 45%;
 }
-
+.card::before {
+    bottom: 44.5%;
+}
+}
 
 @media (max-width: 825px) {
     .card {
@@ -429,6 +449,9 @@
 
     .slideshow-container {
         height: 114px;
+    }
+    .card::before {
+        bottom: 43.5%;
     }
 }
 
@@ -465,7 +488,28 @@
     }
 
 }
-
+@media (max-width: 768px) {
+    .modal-content {
+        height: 45%;
+    }    
+    .modal-content img {
+        width: 60%;
+    }
+    .modal-content .name__brend {
+        font-size: 15px;
+    }
+    .modal-content .price__sale {
+        font-size: 20px;
+    }
+    .price__old {
+        font-size: 14px;
+    }
+    .card::before {
+        width: 88%;
+        right: 6%;
+        bottom: 42.5%;
+}
+}
 @media (max-width: 753px) {
     .card {
         max-width: 207px;
@@ -554,15 +598,15 @@
         right: 5%;
         width: 90%;
     }
-
+    .modal-content .name__brend {
+        font-size: 15px;
+    }
     .modal-content img {
         padding-bottom: 50px;
     }
-
-    .modal-content .name__brend {
-        font-size: 22px;
+    .card::before {
+        bottom: 44.5%;
     }
-
 }
 
 @media (max-width: 621px) {
@@ -644,6 +688,9 @@
     .cartButtonContainer {
         right: auto;
     }
+    .card::before {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 573px) {
@@ -707,6 +754,9 @@
 
     .cards__container {
         justify-content: space-evenly;
+    }
+    .card::before {
+        bottom: 41.5%;
     }
 }
 
@@ -785,7 +835,30 @@
         margin-top: 120px;
     }
 }
-
+@media (max-width: 425px) {
+    .modal-content .name__brend {
+        font-size: 17px;
+    }
+    .card::before {
+        width: 89%;
+        bottom: 37.5%;
+        font-size: 13px;
+}
+.add-to-cart-button {
+    font-size: 12px;
+}
+.cards__container {
+    display: flex;
+    justify-content: center;
+}
+.card {
+    max-width: 247px;
+}
+.card img {
+    width: 170px;
+    height: 190px;
+}
+}
 @media (max-width: 387px) {
 
     .card {
@@ -806,5 +879,37 @@
         font-size: 12px;
     }
 }
+@media (max-width: 375px) {
+    .card::before {
+        width: 92%;
+        right: 4%;
+    }
+    .modal-content .name__brend {
+        font-size: 16px;
+    }
+    .modal-card__info .name {
+        padding: 0;
+    }
+    .modal-content .price{
+        margin-bottom: 3px;
+    }
+}
 
+@media (max-width: 320px) {
+    .name__brend {
+        font-size: 12px;
+    }
+.modal-card img{
+    width: 80%;
+}
+.close-modal-button {
+    top: 0px;
+    right: 0px;
+}
+.modal-content .name__brend {
+    font-size: 15px;
+}
+.card::before {
+    bottom: 41.5%;
+}
 }

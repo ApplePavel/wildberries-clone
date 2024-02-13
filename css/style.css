@@ -94,7 +94,9 @@ header {
 header form {
   width: 68%;
 }
-
+.input__search{
+  appearance: none;
+}
 .form__item {
   display: flex;
   align-items: center;
@@ -880,7 +882,7 @@ opacity: 0.5;
   position: fixed;
   top: 0;
   left: 0;
-  width: 95%;
+  width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
